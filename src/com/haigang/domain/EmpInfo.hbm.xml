@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping package="com.haigang.domain">
+	<class name="EmpInfo" table="zhaopin_empInfo">
+		<id name="positionID">
+			<generator class="native"></generator>
+		</id>
+		<property name="positionName"></property>
+		<property name="positionMark"></property>
+		<property name="positionIntroduce"></property>
+		<property name="workPlace"></property>
+		
+		<property name="experienceRequire"></property>
+		<property name="degreeRequire"></property>
+		<property name="workProperty"></property>
+		<property name="EmpNumber"></property>
+		<property name="salary"></property>
+		
+		<!-- 与用户的是多对一的关系 -->
+		<many-to-one name="user" class="com.haigang.domain.User"
+			column="user_ID"  lazy="false">
+		</many-to-one> 
+		
+	</class>
+</hibernate-mapping>

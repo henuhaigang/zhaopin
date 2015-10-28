@@ -1,0 +1,4 @@
+#Sat Apr 12 14:16:30 CST 2014
+eclipse.preferences.version=1
+validator.Checked=src/com/haigang/mail/SimpleMailSender.java,WebRoot/js/jquery-1.11.0.min.js
+validator.Unchecked=

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.haigang.domain">
+	<class name="Resume" table="zhaopin_resume">
+		<id name="id">
+		<generator class="native"></generator>
+		</id>	
+		<property name="workMakRequire"></property>
+		<property name="careerRequire"></property>
+		<property name="workPlaceRequire"></property>
+		<property name="salaryRequire"></property>	
+		<property name="state"></property>	
+		<property name="selfIntrduce"></property>	
+		<property name="degree"></property>	
+		<!-- <property name="languageLevel"></property>	 -->
+		<property name="interest"></property>	
+		<property name="attachmentAddr"></property>	
+		
+		
+		<many-to-one name="user" class="com.haigang.domain.User"
+			column="user_ID"  lazy="false">
+		</many-to-one> 
+		
+		<set name="userExperience">    <!-- 与用户工作经验是一对多的关系 -->
+			<key column="resume_ID"></key>
+			<one-to-many class="com.haigang.domain.UserExperience" />
+		</set>
+		
+		<set name="projectExperience">    <!-- 与用户项目经验是一对多的关系 -->
+			<key column="resume_ID"></key>
+			<one-to-many class="com.haigang.domain.ProjectExperience" />
+		</set>
+		<set name="language">    <!-- 与用户项目经验是一对多的关系 -->
+			<key column="resume_ID"></key>
+			<one-to-many class="com.haigang.domain.Language" />
+		</set>
+		<set name="certificate">    <!-- 与用户项目经验是一对多的关系 -->
+			<key column="resume_ID"></key>
+			<one-to-many class="com.haigang.domain.Certificate" />
+		</set>
+		
+			
+	</class>
+</hibernate-mapping>

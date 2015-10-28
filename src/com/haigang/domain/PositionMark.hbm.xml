@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping package="com.haigang.domain">
+	<class name="PositionMark" table="zhaopin_positionMark">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="psitionMarkName"></property>
+		<set name="positions">    <!-- 与简历是一对多的关系 -->
+			<key column="positionMark_ID"></key>
+			<one-to-many class="com.haigang.domain.Position" />
+		</set>
+	</class>
+</hibernate-mapping>

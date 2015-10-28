@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.haigang.domain">
+	<class name="User" table="zhaopin_user">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="userName"></property>
+		<property name="password"></property>
+	    <property name="type"></property>
+	    <property name="validateUser"></property>
+		<property name="registerDate"></property>
+
+		<set name="resumes">    <!-- 与简历是一对多的关系 -->
+			<key column="user_ID"></key>
+			<one-to-many class="com.haigang.domain.Resume" />
+		</set>
+
+		<set name="empInfos">    <!-- 与简历是一对多的关系 -->
+			<key column="user_ID"></key>
+			<one-to-many class="com.haigang.domain.EmpInfo" />
+		</set>
+		
+		
+		
+		<!-- 与企业用户信息是一对一的关系 -->
+		<one-to-one name="enterpriseInfo" class="com.haigang.domain.EnterpriseInfo"></one-to-one>
+		<!-- 与个人用户基本信息是一对一的关系 -->
+		<one-to-one name="userInfo" class="com.haigang.domain.UserInfo" ></one-to-one>
+
+
+
+	</class>
+</hibernate-mapping>
