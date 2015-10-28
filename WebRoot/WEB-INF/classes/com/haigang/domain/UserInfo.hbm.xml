@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.haigang.domain">
+	<class name="UserInfo" table="zhaopin_UserInfo">
+		<id name="id">
+		<generator class="native"></generator>
+		</id>	
+		<property name="Name"></property>
+		<property name="gender"></property>
+		<property name="birthday"></property>
+		<property name="phoneNumber"></property>	
+		<property name="email"></property>	
+		<property name="nativeAddress"></property>	
+		<property name="liveAddress"></property>	
+		<property name="politicalStatus"></property>	
+		<property name="postAddress"></property>	
+		<property name="carID"></property>	
+		
+			
+		<many-to-one name="user" class="com.haigang.domain.User"
+			column="user_ID">
+		</many-to-one> 
+
+			
+		
+		
+		
+			
+	</class>
+</hibernate-mapping>

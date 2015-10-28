@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.haigang.domain">
+	<class name="ProjectExperience" table="zhaopin_projectExperience">
+		<id name="id">
+		<generator class="native"></generator>
+		</id>	
+		<property name="projectName"></property>
+		<property name="projecetPeriod"></property>
+		<property name="projectDescribe"></property>
+		<property name="duty"></property>	
+			
+		<!-- 与简历是多对一的关系	 -->
+		<many-to-one name="resume" class="com.haigang.domain.Resume"
+			column="resume_ID" >
+		</many-to-one> 
+			
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,38 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+<session-factory>
+	<!-- 数据库配置 （連接信息寫到spring的配置文件當中） -->
+	<property name="dialect">
+		org.hibernate.dialect.MySQL5Dialect
+	</property>
+	
+	<!-- 其他配置 -->
+	<property name="show_sql">true</property>
+	<property name="hbm2ddl.auto">update</property>
+  
+	<!--导入 映射配置 -->
+
+	<mapping resource="com/haigang/domain/Certificate.hbm.xml" />
+	<mapping resource="com/haigang/domain/City.hbm.xml" />
+	<mapping resource="com/haigang/domain/DeliverInfo.hbm.xml" />
+	<mapping resource="com/haigang/domain/EmpInfo.hbm.xml" />
+	<mapping resource="com/haigang/domain/EnterpriseInfo.hbm.xml" />
+	<mapping resource="com/haigang/domain/EnterpriseMark.hbm.xml" />
+	<mapping resource="com/haigang/domain/EnterpriseProperty.hbm.xml" />
+	<mapping resource="com/haigang/domain/Language.hbm.xml" />
+	<mapping resource="com/haigang/domain/Position.hbm.xml" />
+	<mapping resource="com/haigang/domain/PositionMark.hbm.xml" />
+	<mapping resource="com/haigang/domain/ProjectExperience.hbm.xml" />
+	<mapping resource="com/haigang/domain/Province.hbm.xml" />
+	<mapping resource="com/haigang/domain/Resume.hbm.xml" />
+	<mapping resource="com/haigang/domain/User.hbm.xml" />
+	<mapping resource="com/haigang/domain/UserExperience.hbm.xml" />
+	<mapping resource="com/haigang/domain/UserInfo.hbm.xml" />
+	<mapping resource="com/haigang/domain/WorkMark.hbm.xml" />
+	<mapping resource="com/haigang/domain/WorkProperty.hbm.xml" />
+</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.haigang.domain">
+	<class name="Certificate" table="zhaopin_Certificate">
+		<id name="id">
+		<generator class="native"></generator>
+		</id>	
+		<property name="certificateMark"></property>
+		<property name="certificateName"></property>
+		<property name="authority"></property>
+		<property name="issueDate"></property>
+		
+		<!-- 与简历是多对一的关系	 -->
+		<many-to-one name="resume" class="com.haigang.domain.Resume"
+			column="resume_ID"  lazy="false">
+		</many-to-one> 
+		
+	</class>
+</hibernate-mapping>

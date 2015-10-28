@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.haigang.domain">
+	<class name="UserExperience" table="zhaopin_UserExperience">
+		<id name="id">
+		<generator class="native"></generator>
+		</id>	
+		<property name="enterpriseName"></property>
+		<property name="enterpriseMark"></property>
+		<property name="enterpriseNumber"></property>
+		<property name="department"></property>	
+		<property name="position"></property>	
+		<property name="workTime"></property>	
+		<property name="salary"></property>	
+		<property name="workDescribe"></property>	
+		<!-- 与简历是多对一的关系	 -->
+		<many-to-one name="resume" class="com.haigang.domain.Resume"
+			column="resume_ID"  lazy="false">
+		</many-to-one> 
+			
+		
+		
+		
+			
+	</class>
+</hibernate-mapping>
